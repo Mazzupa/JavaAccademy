@@ -4,13 +4,7 @@ import it.nextre.accademy.esercizi.es8_7.gioco.FireShot;
 
 public class Es8_7 {
     public static void main(String[] args) {
-
-       int x = 0;
-       int y = 1;
-
-       assert x == y;
-
-
+      
         FireShot fireShot = new FireShot();
 
         fireShot.gioca();
