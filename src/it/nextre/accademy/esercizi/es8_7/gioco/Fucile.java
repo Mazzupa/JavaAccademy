@@ -23,7 +23,7 @@ public class Fucile {
         caricatori[caricatore].setNumColpi(caricatori[caricatore].getNumColpi() - 1);
 
         Random random = new Random();
-        if(random.nextInt(100) < Config.NUM_COLPI_PER_CARICATORE) throw new FucileInceppatoException();
+        if(random.nextInt(100) < Config.PERCENTUALE_INCEPPO) throw new FucileInceppatoException();
     }
 
     public void ricarica() throws CaricatoriFinitiException {

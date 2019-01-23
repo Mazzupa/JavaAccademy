@@ -54,7 +54,7 @@ public class FireShot {
                 System.out.println("Fucile inceppato");
                 continue;
             }
-            boolean colpito = random.nextInt(100) < 25;
+            boolean colpito = random.nextInt(100) < Config.PERCENTUALE_COLPO;
             if(colpito) {
                 System.out.println("Hai colpito il barattolo");
                 numBarattoli++;
