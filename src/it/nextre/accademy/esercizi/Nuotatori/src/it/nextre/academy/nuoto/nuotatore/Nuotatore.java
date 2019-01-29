@@ -12,6 +12,10 @@ public class Nuotatore {
     this.numero = numero;
   }
   
+  /**
+   * Costruttore pubblico con generazione random del numero.
+   * @param nome Nome del nuotatore
+   */
   public Nuotatore(String nome) {
     this.nome = nome;
     Random random = new Random();
@@ -37,9 +41,9 @@ public class Nuotatore {
   
   @Override
   public String toString() {
-    return "Nuotatore{" +
-            "nome='" + nome + '\'' +
-            ", numero=" + numero +
-            '}';
+    return "Nuotatore{"
+            + "nome='" + nome + '\''
+            + ", numero=" + numero
+            + '}';
   }
 }

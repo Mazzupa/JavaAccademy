@@ -18,31 +18,28 @@ public class Piscina {
     this.nuotatori = nuotatori;
     this.lunghezza = lunghezza;
   }
-
-  public ArrayList<NuotatoreGara> simula() {
+  
+  /**
+   * Simulazione della gara.
+   * @return Un arrayList contenete i nuotatori con i rispettivi tempi
+   */
+  public ArrayList<NuotatoreGara> startSimulation() {
 
     ArrayList<NuotatoreGara> partecipanti = new ArrayList<>();
-    for(Nuotatore n : nuotatori) {
+    for (Nuotatore n : nuotatori) {
       partecipanti.add(new NuotatoreGara(n.getNome(), n.getNumero()));
     }
 
-    for (int i = 0; i < lunghezza/LUNGHEZZA_VASCA; i++) {
+    for (int i = 0; i < lunghezza / LUNGHEZZA_VASCA; i++) {
       for (int j = 0; j < nuotatori.size(); j++) {
-        Duration d = getRandomDuration();
-
-        System.out.println("Il " + nuotatori.get(j) + "Ha fatto la vasca numero " + i + "in " + d.getSeconds() + " Secondi");
-
-        partecipanti.get(j).add(d);
+        partecipanti.get(j).add(getRandomDuration());
       }
-      System.out.println("_______________________");
     }
-    
     return partecipanti;
   }
 
   public Duration getRandomDuration() {
-    Duration duration = Duration.ZERO;
     Random random = new Random();
-    return duration.plus(Duration.ofSeconds(random.nextInt(10)+15));
+    return Duration.ofSeconds(random.nextInt(50) + 25);
   }
 }
